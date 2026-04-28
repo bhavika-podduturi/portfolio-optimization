@@ -7,10 +7,14 @@ The objective of this project is to identify optimal portfolio allocations that 
 * The Tangency Portfolio: the portfolio with the highest Sharpe ratio (best return per unit of risk)
 
 ## Methodology
-Part 1 - Data Collection & Storage: Historical daily prices are pulled from Yahoo Finance. Prices are resampled to monthly frequency and converted to month-over-month percentage returns. Assets are filtered via SQL to retain only those with sufficient history and positive average returns.
+Part 1 - Data Collection & Storage: Historical daily prices are pulled from Yahoo Finance. Prices are resampled and converted to month-over-month percentage returns. Assets are filtered via SQL to retain only those with sufficient history and positive average returns.
+
 Part 2 - Parameter Estimation: An equal-weighted portfolio serves as the baseline to calculate the mean return vector and the covariance matrix for the filtered asset list.
+
 Part 3 - Single Portfolio Optimization: The project finds the minimum variance portfolio that achieves a target return of 1.5% per month. Two equality constraints are imposed: the portfolio must hit the target return, and weights must sum to one.
+
 Part 4 - Tangency Portfolio: The portfolio with the maximum possible Sharpe ratio is found by minimizing the negative Sharpe ratio since scipy only offers minimizing functions. 
+
 Part 5 - Efficient Frontier: The optimizer is run repeatedly across a range of target returns. Each point on the frontier represents the lowest possible volatility achievable for that target return. Individual asset risk/return profiles are plotted alongside the frontier as well as the tangency portfolio and equal-weights portfolio.
 
 ## Technologies Used
