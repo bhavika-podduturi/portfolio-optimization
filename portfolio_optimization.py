@@ -65,7 +65,6 @@ def mvs(weights):
     pmean = weights.T @ mu
     pvol = np.sqrt(weights.T @ sigma @ weights)
     return pmean, pvol, pmean/pvol
-# REMOVE LATER: this function is using linear algebra
 
 # 2d. Determine the mean, volatility, and Sharpe ratio for an equal weighted portfolio
 print(mvs(ewgts))
